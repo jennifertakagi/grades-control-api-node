@@ -6,9 +6,22 @@ const router = express.Router();
 router.post("/create", async (req, res, next) => {
     try {
         let newGrade = req.body;
-        const dataJSON = JSON.parse(await fs.readFile(fileName));
+
+        if (!newGrade.student || !newGrade.subject || !newGrade.type || newGrade.value === null) {
+            throw new Error('These parameters are required: student, subject, type, value!');
+        }
         
-        newGrade = { id: dataJSON.nextId++, ...newGrade, timestamp: new Date() };
+        const dataJSON = JSON.parse(await fs.readFile(fileName));
+       
+        newGrade = { 
+            id: dataJSON.nextId++, 
+            student: newGrade.student,
+            subject: newGrade.subject,
+            type: newGrade.type,
+            value: newGrade.value,
+            timestamp: new Date() 
+        };
+
         dataJSON.grades.push(newGrade);
 
         await fs.writeFile(fileName, JSON.stringify(dataJSON, null, 2));
@@ -24,6 +37,11 @@ router.post("/create", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
     try {
         const id = req.params.id;
+
+        if (!id) {
+            throw new Error('The id is required!');
+        }
+
         const dataJSON = JSON.parse(await fs.readFile(fileName));
         const selectedGrades = dataJSON.grades.find(grade => grade.id === Number(id));
 
@@ -40,6 +58,11 @@ router.get("/:id", async (req, res, next) => {
 router.get("/totalGrade/:student/:subject", async (req, res, next) => {
     try {
         const { student, subject } = req.params;
+
+        if (!student || !subject) {
+            throw new Error('These parameters are required: student, subject!');
+        }
+
         const dataJSON = JSON.parse(await fs.readFile(fileName));
         const totalGrade = dataJSON.grades.reduce((sumGrade, grade) => {
             if (grade.student === student && grade.subject === subject) {
@@ -59,6 +82,12 @@ router.get("/totalGrade/:student/:subject", async (req, res, next) => {
 router.get("/meanGrade/:subject/:type", async (req, res, next) => {
     try {
         const { subject, type } = req.params;
+
+
+        if (!subject || !type) {
+            throw new Error('These parameters are required: subject, type!');
+        }
+
         const dataJSON = JSON.parse(await fs.readFile(fileName));
         const filterGrades = dataJSON.grades.filter(grade => grade.subject === subject && grade.type === type);
         const totalGrade = filterGrades.reduce((a, b) => a + b.value, 0);
@@ -75,6 +104,11 @@ router.get("/meanGrade/:subject/:type", async (req, res, next) => {
 router.get("/betterGrades/:subject/:type", async (req, res, next) => {
     try {
         const { subject, type } = req.params;
+
+        if (!subject || !type) {
+            throw new Error('These parameters are required: subject, type!');
+        }
+
         const dataJSON = JSON.parse(await fs.readFile(fileName));
         const filterGrades = dataJSON.grades.filter(grade => grade.subject === subject && grade.type === type);
         const sortedGrade = filterGrades.sort((a, b) => a.value > b.value ? -1 : 1);
@@ -91,6 +125,11 @@ router.get("/betterGrades/:subject/:type", async (req, res, next) => {
 router.delete("/delete/:id", async (req, res, next) => {
     try {
         const id = req.params.id;
+
+        if (!id) {
+            throw new Error('The id is required!');
+        }
+
         const dataJSON = JSON.parse(await fs.readFile(fileName));
         const userIndex = validateUserExists(dataJSON.grades, id)
 
@@ -114,6 +153,11 @@ router.patch("/updateGrade/:id", async (req, res, next) => {
     try {
         const newGrade = req.body;
         const id = req.params.id;
+
+        if (!id) {
+            throw new Error('The id is required!');
+        }
+
         const dataJSON = JSON.parse(await fs.readFile(fileName));
         const userIndex = validateUserExists(dataJSON.grades, id)
         const updateGrade = dataJSON.grades[userIndex]
