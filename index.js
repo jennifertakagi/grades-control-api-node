@@ -1,8 +1,10 @@
 import express from 'express';
 import winston from 'winston';
 import cors from 'cors';
+import swaggerUI from 'swagger-ui-express';
 import gradesRouter from './routes/grades.js';
 import { promises as fs } from 'fs';
+import { swaggerDocument } from './docSwagger.js';
 
 const app = express();
 const { combine, timestamp, label, printf } = winston.format;
@@ -26,6 +28,7 @@ global.logger = winston.createLogger({
 
 app.use(express.json());
 app.use(cors());
+app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use('/grade', gradesRouter);
 
 app.listen(3031, async () => {

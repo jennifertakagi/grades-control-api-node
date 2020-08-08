@@ -60,6 +60,10 @@ class GradeController {
             const dataJSON = JSON.parse(await fs.readFile(fileName));
             const selectedGrades = dataJSON.grades.find(grade => grade.id === Number(id));
     
+            if (!selectedGrades) {
+                throw new Error('The id does not exist!');
+            }
+
             delete dataJSON.nextId;
     
             res.send(selectedGrades);
