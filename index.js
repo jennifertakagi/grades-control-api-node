@@ -1,5 +1,6 @@
 import express from 'express';
 import winston from 'winston';
+import cors from 'cors';
 import gradesRouter from './routes/grades.js';
 import { promises as fs } from 'fs';
 
@@ -24,6 +25,7 @@ global.logger = winston.createLogger({
 });
 
 app.use(express.json());
+app.use(cors());
 app.use('/grade', gradesRouter);
 
 app.listen(3031, async () => {
