@@ -1,38 +1,73 @@
-<p align="left">
-   <img src="docs/logo.png" width="150"/>
-</p>
+<!-- Inspired by https://github.com/jennifertakagi/grades-control-api-node -->
 
-# Grades Control API
-
-> Control the grades with this API :)
-
-[![Author](https://img.shields.io/badge/author-jennifertakagi-ff9000?style=flat-square)](https://github.com/jennifertakagi)
-[![Languages](https://img.shields.io/github/languages/count/jennifertakagi/grades-control-api-node?color=%23ff9000&style=flat-square)](#)
-[![Stars](https://img.shields.io/github/stars/jennifertakagi/grades-control-api-node?color=ff9000&style=flat-square)](https://github.com/jennifertakagi/grades-control-api-node/stargazers)
-[![Forks](https://img.shields.io/github/forks/jennifertakagi/grades-control-api-node?color=%23ff9000&style=flat-square)](https://github.com/jennifertakagi/grades-control-api-node/network/members)
-[![Contributors](https://img.shields.io/github/contributors/jennifertakagi/grades-control-api-node?color=ff9000&style=flat-square)](https://github.com/jennifertakagi/grades-control-api-node/graphs/contributors)
+<!-- PROJECT SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-<p align="left">
-   <img src="docs/grades-control.gif" />
-</p>
 
----
-
-# :pushpin: Table of Contents
-
-* [Features](#rocket-features)
-* [Installation](#construction_worker-installation)
-* [Getting Started](#runner-getting-started)
-* [FAQ](#postbox-faq)
-* [Found a bug? Missing a specific feature?](#bug-issues)
-* [Contributing](#tada-contributing)
-* [License](#closed_book-license)
-
+<!-- PROJECT LOGO -->
 <br />
+<p align="center">
+  <a href="https://github.com/jennifertakagi/grades-control-api-node">
+    <img src="docs/logo.png" alt="Logo" width="100" height="100">
+  </a>
 
-# :rocket: Features
+  <h3 align="center">Grades Control API</h3>
 
+  <p align="center">
+    Control the grades with this simple API!
+    <br />
+    <a href="https://github.com/jennifertakagi/grades-control-api-node"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/jennifertakagi/grades-control-api-node/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/jennifertakagi/grades-control-api-node/issues">Request Feature</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+A simple API to control grades in a clean way.
+
+Features:
 * Create a grade.
 * Check a grade, by id.
 * Check total grade's value, by the student and the subject.
@@ -41,41 +76,101 @@
 * Delete a grade, by the grade's id.
 * Update a grade, by the grade's id.
 
-# :construction_worker: Installation
 
-**You need to install [Node.js](https://nodejs.org/en/download/) and [NPM](https://www.npmjs.com/) first, then in order to clone the project via HTTPS, run this command:**
 
-```git clone https://github.com/jennifertakagi/grades-control-api-node.git```
+### Built With
 
-SSH URLs provide access to a Git repository via SSH, a secure protocol. If you have a SSH key registered in your Github account, clone the project using this command:
+* [Node JS](https://nodejs.org/en/download/)
+* [Express](https://expressjs.com/)
+* [Winston](https://www.npmjs.com/package/winston)
+* [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express)
 
-```git clone git@github.com:jennifertakagi/grades-control-api-node.git```
 
-**Install dependencies**
 
-```npm install```
+<!-- GETTING STARTED -->
+## Getting Started
 
-# :runner: Getting Started
+### Prerequisites
 
-Run the following command in order to start the application in a development environment:
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-```npm run dev:watch```
+* yarn
+  ```sh
+  npm install --global yarn
+  ```
 
-# :postbox: Faq
+### Installation
 
-**Question:** What are the tecnologies used in this project?
+1. Clone the repo
+   ```sh
+   git clone https://github.com/jennifertakagi/grades-control-api-node.git
+   ```
+2. Install packages
+   ```sh
+   yarn | npm install
+   ```
+3. Run the following command in order to start the application in a development environment:
+   ```JS
+   yarn dev:watch | npm run dev:watch
+   ```
 
-**Answer:** The tecnologies used in this project are [Express](https://expressjs.com/) + [Winston](https://www.npmjs.com/package/winston) + [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express).
 
-# :bug: Issues
 
-Feel free to **file a new issue** with a respective title and description on the [Grades Control API](https://github.com/jennifertakagi/grades-control-api-node/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**! Have a look at our [contribution guidelines](https://github.com/jennifertakagi/grades-control-api-node/blob/master/CONTRIBUTING.md) to find out about the coding standards.
+<!-- ROADMAP -->
+## Roadmap
 
-# :tada: Contributing
+See the [open issues](https://github.com/jennifertakagi/grades-control-api-node/issues) for a list of proposed features (and known issues).
 
-Check out the [contributing](https://github.com/jennifertakagi/grades-control-api-node/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing.
 
-# :closed_book: License
 
-Released in 2020.
-This project is under the [MIT license](https://github.com/jennifertakagi/grades-control-api-node/master/LICENSE).
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Jennifer Takagi - [@jennitakagi](https://twitter.com/jennitakagi)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Cors](https://www.npmjs.com/package/cors)
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/jennifertakagi/grades-control-api-node.svg?style=for-the-badge
+[contributors-url]: https://github.com/jennifertakagi/grades-control-api-node/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jennifertakagi/grades-control-api-node.svg?style=for-the-badge
+[forks-url]: https://github.com/jennifertakagi/grades-control-api-node/network/members
+[stars-shield]: https://img.shields.io/github/stars/jennifertakagi/grades-control-api-node.svg?style=for-the-badge
+[stars-url]: https://github.com/jennifertakagi/grades-control-api-node/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jennifertakagi/grades-control-api-node.svg?style=for-the-badge
+[issues-url]: https://github.com/jennifertakagi/grades-control-api-node/issues
+[license-shield]: https://img.shields.io/github/license/jennifertakagi/grades-control-api-node.svg?style=for-the-badge
+[license-url]: https://github.com/jennifertakagi/grades-control-api-node/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/jennifertakagi
+[product-screenshot]: docs/grades-control.gif
