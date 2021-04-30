@@ -14,7 +14,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jennifertakagi/grades-control-api-node">
-    <img src="docs/logo.png" alt="Logo" width="100" height="100">
+    <img src="docs/logo.png" alt="Logo" width="80" height="60">
   </a>
 
   <h3 align="center">Grades Control API</h3>
